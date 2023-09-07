@@ -1,7 +1,7 @@
 const AddProjectValidation = require('./AddProjectValidation');
 
-const projectsValidation = {
+const projectsValidations = {
   AddProjectValidation,
 };
 
-module.exports = projectsValidation;
+module.exports = projectsValidations;
