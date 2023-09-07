@@ -7,7 +7,7 @@ const validationScheme = joi.object({
     .max(60)
     .messages({
       'any.required': 'O nome do projeto é necessário',
-      'string.any': 'O nome do projeto não pode estar vazio',
+      'string.empty': 'O nome do projeto não pode estar vazio',
       'string.min': 'O nome do projeto deve conter no mínimo 5 caracteres',
       'string.max': 'O nome do projeto deve conter no máximo 60 caracteres',
     }),
