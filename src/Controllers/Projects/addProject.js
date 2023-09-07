@@ -12,11 +12,11 @@ const AddProject = async (req, res, next) => {
     if (projectAdded instanceof CustomError) {
       return res.status(projectAdded.status).json({ message: projectAdded.message });
     }
+
+    return res.status(StatusCodes.CREATED).json({ projectAdded });
   } catch (e) {
     next(e);
   }
-
-  return res.status(StatusCodes.CREATED).json({ projectAdded });
 };
 
 module.exports = AddProject;
