@@ -14,6 +14,11 @@ const DeleteProjectById = async (id) => {
 
   const hasDeleted = await projectsModels.DeleteProjectById(id);
 
+  if (hasDeleted.deletedCount === 0) {
+    const error = new CustomError(null, 'Não foi possível deletar esse projeto, por favor, tente novamente mais tarde!');
+    return error;
+  }
+
   return hasDeleted;
 };
 
