@@ -9,12 +9,12 @@ const { ProjectsCollection } = process.env;
 const UpdateProjectById = async (id, newValues) => {
   const db = await getDBConnection();
 
-  const updatedGame = await db.collection(ProjectsCollection).updatedOne(
+  const updatedProject = await db.collection(ProjectsCollection).updatedOne(
     { _id: new ObjectId(id) },
     { $set: newValues },
   );
 
-  return updatedGame;
+  return updatedProject;
 };
 
 module.exports = UpdateProjectById;
