@@ -6,4 +6,4 @@ const GetAllProjects = async () => {
   return projects;
 };
 
-module.exports = GetAllProjects();
+module.exports = GetAllProjects;
