@@ -22,7 +22,11 @@ const UpdateProjectById = async (id, newValues) => {
 
   const updatedProject = await projectModels.UpdateProjectById(id, newValues);
 
-  return updatedProject;
+  if (updatedProject.modifiedCount === 0) {
+    return 'Nenhum valor atualizado!';
+  }
+
+  return { ...projectToUpdate, ...newValues, _id: id };
 };
 
 module.exports = UpdateProjectById;
