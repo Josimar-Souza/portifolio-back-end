@@ -10,7 +10,7 @@ const { ProjectsCollection } = process.env;
 const GetProjectById = async (id) => {
   const db = await getDBConnection();
 
-  const project = await db.collection(ProjectsCollection).findOne({ _id: ObjectId(id) });
+  const project = await db.collection(ProjectsCollection).findOne({ _id: new ObjectId(id) });
 
   return project;
 };
