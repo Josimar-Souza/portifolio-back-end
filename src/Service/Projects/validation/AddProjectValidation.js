@@ -45,6 +45,8 @@ const validationScheme = joi.object({
       'string.empty': 'A url da imagem do projeto não pode estar vazia',
       'string.uri': 'A url da imagem do projeto deve ser válida',
     }),
+  pinned: joi.bool()
+    .required(),
 });
 
 module.exports = (value) => validationScheme.validate(value);
